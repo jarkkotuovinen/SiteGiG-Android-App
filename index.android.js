@@ -34,6 +34,10 @@ var _setStorage = function(key, value) {
 
 }
 
+var _clearStorage = function() {
+	AsyncStorage.clear();
+}
+
 var _sgApiCall = function(endpoint, data, callback) {
 
 	try {
@@ -169,6 +173,9 @@ var Main = React.createClass({
     },
 
   	_unauthorize() {
+		
+  		_clearStorage();
+
 		this.props.navigator.push({id: 1,});
 	},
 
